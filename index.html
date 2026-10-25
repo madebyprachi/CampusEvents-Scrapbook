@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3efe3">
+  <title>CampusEvents | Little Moments, Big Memories</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="loading-screen">
+  <div class="loader-icon">✂️</div>
+  <div class="loader-doodles">
+  <span>♡</span>
+  <span>✦</span>
+  <span>🌷</span>
+  <span>✧</span>
+</div>
+  <div class="loader-text">Gathering memories...</div>
+  <div class="loader-bar">
+    <div class="loader-progress"></div>
+  </div>
+</div>
+
+  <header class="navbar">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">✂</span>
+      Campus<span>Events</span>
+    </a>
+
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a class="nav-button" href="register.html">Join the fun ↗</a>
+  </header>
+
+  <main>
+    <section class="hero paper">
+      <div class="tape tape-peach"></div>
+      <p class="eyebrow">A LITTLE PLACE FOR BIG MEMORIES ✿</p>
+
+      <h1>College life,<br>
+        <span class="highlight">one memory</span> at a time.
+      </h1>
+
+      <p class="hero-copy">
+        From Tech Fests to Garba nights, discover the little moments
+        that make college life unforgettable.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-blue" href="events.html">Explore events ↗</a>
+        <a class="text-link" href="about.html">Our little story →</a>
+      </div>
+
+      <div class="doodle doodle-star">✳</div>
+      <div class="doodle doodle-heart">♡</div>
+
+      <div class="hero-note">
+        <span>dear college diary,</span>
+        <p>Let's make this year memorable!</p>
+        <small>— CampusEvents</small>
+      </div>
+    </section>
+
+    <section class="memory-section">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">PICK YOUR NEXT MEMORY</p>
+          <h2>Little things happening ✿</h2>
+        </div>
+        <a class="text-link" href="events.html">See all events →</a>
+      </div>
+
+      <div class="memory-grid">
+        <article class="memory-card tilt-left">
+          <div class="card-tape tape-blue"></div>
+          <div class="card-art art-tech">⌘<span>0101</span></div>
+          <p class="card-label">01 · TECHNICAL</p>
+          <h3>Tech Fest</h3>
+          <p>Big ideas, curious minds and a little bit of coding magic.</p>
+          <a href="event-details.html?event=Technical%20Fest">Explore this note ↗</a>
+        </article>
+
+        <article class="memory-card tilt-right">
+          <div class="card-tape tape-pink"></div>
+          <div class="card-art art-culture">✿ ♫ ✿</div>
+          <p class="card-label">02 · CULTURAL</p>
+          <h3>Rang & Raas</h3>
+          <p>Garba nights, music, traditions and colourful memories.</p>
+          <a href="celebrations.html">Explore this note ↗</a>
+        </article>
+
+        <article class="memory-card tilt-left">
+          <div class="card-tape tape-yellow"></div>
+          <div class="card-art art-sports">GO!<span>★</span></div>
+          <p class="card-label">03 · SPORTS</p>
+          <h3>Sports Meet</h3>
+          <p>Team spirit, friendly competition and unforgettable wins.</p>
+          <a href="event-details.html?event=Sports%20Meet">Explore this note ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="festival-strip">
+      <div class="festival-sticker">SAVE<br>THE<br>DATE!</div>
+      <div>
+        <p class="eyebrow">THE FESTIVE SIDE OF CAMPUS</p>
+        <h2>A Year Full of Celebrations ✨</h2>
+        <p>Celebrations, college traditions and moments worth keeping.</p>
+      </div>
+      <a class="button button-sage" href="events.html">Find celebrations →</a>
+    </section>
+
+    <section class="quote-note paper">
+      <span>✎ a note to remember</span>
+      <p>"The best part of college isn't just what we learn,<br>
+        it's the memories we make along the way."</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ♡ and a little paper magic.</p>
+    <p>CampusEvents · College Event Management</p>
+    <p class="credits">Developed by Prachi Sharma · Dhatri Pandya · Lucky Patel</p>
+  </footer>
+
+  <script>
+  (() => {
+    const loader = document.getElementById("loading-screen");
+    if (!loader) return;
+
+    const startTime = Date.now();
+
+    window.addEventListener("load", () => {
+      const elapsed = Date.now() - startTime;
+      const delay = Math.max(0, 1500 - elapsed);
+
+      setTimeout(() => {
+        loader.classList.add("hide");
+      }, delay);
+    });
+  })();
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

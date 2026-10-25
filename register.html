@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | CampusEvents</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="loading-screen">
+  <div class="loader-icon">✂️</div>
+  <div class="loader-text">Gathering memories...</div>
+  <div class="loader-bar">
+    <div class="loader-progress"></div>
+  </div>
+</div>
+
+  <header class="navbar">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">✂</span>
+      Campus<span>Events</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="nav-button" href="events.html">Explore events ↗</a>
+  </header>
+
+  <main>
+    <section class="hero paper">
+      <div class="tape tape-peach"></div>
+      <p class="eyebrow">YOUR NEXT MEMORY STARTS HERE ✿</p>
+      <h1>Count me <span class="highlight">in!</span></h1>
+      <p class="hero-copy">
+        Choose your celebration, fill in your details and join the fun!
+      </p>
+    </section>
+
+    <section class="memory-section">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">PIN YOUR DETAILS HERE</p>
+          <h2>Let's get you registered ✎</h2>
+        </div>
+      </div>
+
+      <form class="paper registration-form" id="registrationForm">
+        <div class="tape tape-peach"></div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullName">Full name *</label>
+            <input id="fullName" name="fullName" type="text"
+              placeholder="Your name" maxlength="80" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address *</label>
+            <input id="email" name="email" type="email"
+              placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="college">College name *</label>
+            <input id="college" name="college" type="text"
+              placeholder="Your college" maxlength="120" required>
+          </div>
+
+          <div class="form-group">
+            <label for="course">Course / year *</label>
+            <input id="course" name="course" type="text"
+              placeholder="e.g. BCA, Semester 3" maxlength="80" required>
+          </div>
+
+          <div class="form-group form-full">
+            <label for="event">Choose your event *</label>
+            <select id="event" name="event" required>
+              <option value="">Select an event</option>
+              <optgroup label="Indian Festivals">
+                <option>Uttarayan</option>
+                <option>Republic Day</option>
+                <option>Holi</option>
+                <option>Eid</option>
+                <option>Raksha Bandhan</option>
+                <option>Independence Day</option>
+                <option>Janmashtami</option>
+                <option>Ganesh Chaturthi</option>
+                <option>Navratri</option>
+                <option>Diwali</option>
+                <option>Christmas</option>
+              </optgroup>
+              <optgroup label="College Events">
+                <option>Technical Fest</option>
+                <option>Cultural Fest</option>
+                <option>Sports Meet</option>
+                <option>Freshers' Party</option>
+                <option>Annual Day</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group form-full">
+            <label for="message">Your little note (optional)</label>
+            <textarea id="message" name="message" rows="4"
+              maxlength="500"
+              placeholder="Any questions or something you'd like to share..."></textarea>
+          </div>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="consent" required>
+          <span>I confirm that my details are correct. *</span>
+        </label>
+
+        <button class="button button-blue submit-button" type="submit">
+          Submit registration ↗
+        </button>
+
+        <p class="form-note">* Required fields</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ♡ and a little paper magic.</p>
+    <p>CampusEvents · College Event Management</p>
+    <p class="credits">Developed by Prachi Sharma · Dhatri Pandya · Lucky Patel</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+const selectedEvent = params.get("event");
+
+if (selectedEvent) {
+  const eventDropdown = document.getElementById("event");
+
+  for (const option of eventDropdown.options) {
+    if (option.text.trim() === selectedEvent) {
+      eventDropdown.value = option.value;
+      break;
+    }
+  }
+}
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const selectedEvent = document.getElementById('event').value;
+      if (!selectedEvent) return;
+
+      window.location.href =
+        'thankyou.html?event=' + encodeURIComponent(selectedEvent);
+    });
+  </script>
+<script src="js/script.js"></script>
+</body>
+</html>

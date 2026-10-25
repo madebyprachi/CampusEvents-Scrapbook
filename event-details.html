@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details | CampusEvents</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    .details-wrap {
+      max-width: 1000px;
+      margin: 55px auto;
+      padding: 20px;
+    }
+
+    .details-paper {
+      position: relative;
+      background: #fffdf6;
+      padding: 45px 30px;
+      border: 1px solid #e7dfce;
+      box-shadow: 7px 8px 0 #d9d1c0;
+      text-align: center;
+    }
+
+    .details-paper::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 42%;
+      width: 130px;
+      height: 28px;
+      background: #f5cbb9;
+      opacity: .8;
+      transform: rotate(-4deg);
+    }
+
+    .details-tag {
+      display: inline-block;
+      padding: 8px 18px;
+      background: #e4e9dc;
+      color: #536d62;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .details-title {
+      font-family: 'Kalam', cursive;
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.15;
+      color: #344054;
+      margin: 18px 0 8px;
+    }
+
+    .details-decoration {
+      font-size: 42px;
+      margin: 15px 0;
+    }
+
+    .details-description {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      line-height: 1.8;
+      color: #667085;
+      font-size: 16px;
+    }
+
+    .details-info {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .info-note {
+      background: #f7edb8;
+      padding: 18px;
+      transform: rotate(-1deg);
+    }
+
+    .info-note:nth-child(2) {
+      background: #dce8ef;
+      transform: rotate(1deg);
+    }
+
+    .info-note:nth-child(3) {
+      background: #e4e9dc;
+      transform: rotate(-.5deg);
+    }
+
+    .info-note h3 {
+      margin: 0 0 8px;
+      color: #344054;
+      font-size: 16px;
+    }
+
+    .info-note p {
+      margin: 0;
+      color: #536170;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    .details-message {
+      background: #e4e9dc;
+      padding: 20px;
+      margin: 25px auto;
+      max-width: 600px;
+      font-family: 'Kalam', cursive;
+      font-size: 20px;
+      color: #344054;
+    }
+
+    .details-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .details-actions a {
+      text-decoration: none;
+    }
+
+    .details-back {
+      color: #344054;
+      font-weight: 800;
+      border-bottom: 3px solid #e4c96b;
+      padding: 8px 0;
+    }
+
+    @media (max-width: 650px) {
+      .details-wrap {
+        margin: 30px auto;
+        padding: 14px;
+      }
+
+      .details-paper {
+        padding: 35px 18px;
+      }
+
+      .details-info {
+        grid-template-columns: 1fr;
+      }
+
+      .details-paper::before {
+        left: 35%;
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading-screen">
+  <div class="loader-icon">✂️</div>
+  <div class="loader-text">Gathering memories...</div>
+  <div class="loader-bar">
+    <div class="loader-progress"></div>
+  </div>
+</div>
+
+  <nav class="navbar">
+   
+<header class="navbar">
+  <a class="brand" href="index.html">
+    <span class="brand-icon">✂</span>
+    Campus<span>Events</span>
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <a class="nav-button" href="events.html">Explore more ↗</a>
+</header>
+ 
+  </nav>
+
+  <main class="details-wrap">
+    <section class="details-paper">
+      <span class="details-tag">A little event magic ✿</span>
+
+      <div class="details-decoration" id="eventDecoration">✨ 🎉 ✨</div>
+
+      <h1 class="details-title" id="eventTitle">Event Details</h1>
+
+      <p class="details-description" id="eventDescription">
+        Every event brings new memories, new people and new experiences.
+      </p>
+
+      <div class="details-info">
+        <article class="info-note">
+          <h3>📅 Date</h3>
+          <p id="eventDate">To be announced</p>
+        </article>
+
+        <article class="info-note">
+          <h3>📍 Venue</h3>
+          <p id="eventVenue">College campus / To be announced</p>
+        </article>
+
+        <article class="info-note">
+          <h3>🎟️ Entry</h3>
+          <p id="eventEntry">Registration required</p>
+        </article>
+      </div>
+
+      <div class="details-message" id="eventMessage">
+        Collect moments, not just photographs. ♡
+      </div>
+
+      <div class="details-actions">
+        <a href="register.html" class="button button-blue" id="registerButton">
+          Register for this event ↗
+        </a>
+
+        <a href="events.html" class="details-back">
+          ← Back to events
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with ♡ and a little paper magic.</p>
+    <p>CampusEvents · College Event Management</p>
+  </footer>
+
+  <script>
+    const events = {
+      "Uttarayan": {
+        emoji: "🪁 ☀️ 🪁",
+        description: "Celebrate the sky full of colourful kites, cheerful music and the joy of flying kites with friends.",
+        message: "Let your dreams fly as high as your kites! ♡"
+      },
+      "Republic Day": {
+        emoji: "🇮🇳 ✨ 🇮🇳",
+        description: "Celebrate India's Constitution, unity and diversity with a day of pride and remembrance.",
+        message: "Proud of our nation, inspired by its future. ♡"
+      },
+      "Holi": {
+        emoji: "🎨 🌈 🎨",
+        description: "Get ready for colours, laughter, music and happy moments with your friends.",
+        message: "Add a little colour to every memory! ♡"
+      },
+      "Eid": {
+        emoji: "🌙 ✨ 🌙",
+        description: "Celebrate togetherness, kindness and sharing through a joyful festive gathering.",
+        message: "May the day bring peace, joy and togetherness. ♡"
+      },
+      "Raksha Bandhan": {
+        emoji: "🎀 💖 🎀",
+        description: "Celebrate the special bond of love, care and friendship between siblings.",
+        message: "Some bonds make life's sweetest memories. ♡"
+      },
+      "Independence Day": {
+        emoji: "🇮🇳 🕊️ 🇮🇳",
+        description: "Come together to honour India's freedom and the people who shaped our nation's history.",
+        message: "Freedom, unity and pride in every heart. ♡"
+      },
+      "Janmashtami": {
+        emoji: "🦚 🪈 🦚",
+        description: "Celebrate the birth of Lord Krishna with devotion, music and festive traditions.",
+        message: "Let the celebration fill your heart with joy. ♡"
+      },
+      "Ganesh Chaturthi": {
+        emoji: "🙏 🌺 🙏",
+        description: "Welcome Ganpati with devotion, decorations and moments of community celebration.",
+        message: "May new beginnings bring happiness and hope. ♡"
+      },
+      "Navratri": {
+        emoji: "💃 🪘 💃",
+        description: "Celebrate nine vibrant nights with Garba, dandiya, traditional outfits and music.",
+        message: "Get ready for Garba beats, dandiya nights and colourful memories! ♡"
+      },
+      "Diwali": {
+        emoji: "🪔 ✨ 🪔",
+        description: "Celebrate the festival of lights with glowing diyas, colourful decorations and joyful moments.",
+        message: "May your celebrations shine with happiness and hope. ♡"
+      },
+      "Christmas": {
+        emoji: "🎄 🎁 🎄",
+        description: "Enjoy the festive spirit with decorations, music, friendship and Christmas cheer.",
+        message: "Wishing you a season full of warmth and joy. ♡"
+      },
+      "Technical Fest": {
+        emoji: "💻 ⚡ 💻",
+        description: "Showcase creativity, technical skills and innovative ideas through exciting college activities.",
+        message: "Create, experiment and bring your ideas to life! ♡"
+      },
+      "Cultural Fest": {
+        emoji: "🎭 🎶 🎭",
+        description: "Celebrate talent through dance, music, performances and the diverse cultures of our college.",
+        message: "Every performance tells a story worth remembering. ♡"
+      },
+      "Sports Meet": {
+        emoji: "🏆 ⚽ 🏆",
+        description: "Join the spirit of teamwork, sportsmanship and friendly competition.",
+        message: "Play with passion and celebrate every effort! ♡"
+      },
+      "Freshers' Party": {
+        emoji: "🎉 💌 🎉",
+        description: "Meet new friends, discover college life and make your first campus memories.",
+        message: "New faces, new friendships and a fresh beginning! ♡"
+      },
+      "Annual Day": {
+        emoji: "🌟 🎤 🌟",
+        description: "Celebrate the achievements, talent and memorable moments of the college year.",
+        message: "A year of memories, a night to celebrate! ♡"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const rawEvent = params.get("event") || "Navratri";
+
+const selectedEvent = rawEvent.includes("Technical")
+  ? "Technical Fest"
+  : rawEvent;
+    const details = events[selectedEvent] || {
+      emoji: "✨ 🎉 ✨",
+      description: "Join us for a memorable event filled with fun, learning and togetherness.",
+      message: "Collect moments, not just photographs! ♡"
+    };
+
+    document.getElementById("eventTitle").textContent = selectedEvent;
+    document.getElementById("eventDecoration").textContent = details.emoji;
+    document.getElementById("eventDescription").textContent = details.description;
+    document.getElementById("eventMessage").textContent = details.message;
+
+    document.getElementById("registerButton").href =
+      "register.html?event=" + encodeURIComponent(selectedEvent);
+
+    const eventSelect = document.getElementById("event");
+    // The registration page can read ?event=... to preselect this event.
+  </script>
+<script src="js/script.js"></script>
+</body>
+</html>
